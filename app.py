@@ -14,6 +14,10 @@ with open("model.pkl", "rb") as f:
 
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "Welcome to the FastAPI ML app!"}
+
 # Define request schema
 class IrisFeatures(BaseModel):
     features: list[float]
